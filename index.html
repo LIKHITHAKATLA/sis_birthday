@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Sister 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .page {
+      display: none;
+      text-align: center;
+      width: 100%;
+      max-width: 700px;
+      padding: 2rem;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #d63384;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeInBounce 2s forwards;
+    }
+
+    @keyframes fadeInBounce {
+      0% { opacity: 0; transform: translateY(50px) scale(0.8); }
+      60% { opacity: 1; transform: translateY(-20px) scale(1.05); }
+      80% { transform: translateY(10px) scale(0.95); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    .btn {
+      background: #d63384;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 2rem;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #a61e67;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .birthday-message {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #d63384;
+      margin-bottom: 1rem;
+    }
+
+    .teddy-bears {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .teddy {
+      width: 120px;
+      height: auto;
+    }
+
+    .letter {
+      background: #fff7f0;
+      padding: 1.5rem;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      color: #333;
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    /* Countdown Styles */
+    .countdown-screen {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    .countdown-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #d63384;
+      margin-bottom: 2rem;
+    }
+
+    .countdown-container {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .countdown-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      text-align: center;
+      min-width: 90px;
+      transition: transform 0.3s ease;
+    }
+
+    .countdown-item:hover {
+      transform: scale(1.1);
+    }
+
+    .countdown-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #d63384;
+      display: block;
+    }
+
+    .countdown-label {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.3rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .title {
+        font-size: 1.5rem;
+      }
+      .teddy {
+        width: 80px;
+      }
+      .letter {
+        font-size: 0.95rem;
+        padding: 1rem;
+      }
+      .countdown-container {
+        gap: 1rem;
+      }
+      .countdown-number {
+        font-size: 1.5rem;
+      }
+      .countdown-title {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Page 1 -->
+  <div class="page active" id="page1">
+    <div class="title">✨ There’s something special for you ✨</div>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="countdown-screen" id="countdownScreen">
+    <div class="countdown-title">Your special day is coming! ✨</div>
+    <div class="countdown-container">
+      <div class="countdown-item"><span class="countdown-number" id="days">00</span><div class="countdown-label">Days</div></div>
+      <div class="countdown-item"><span class="countdown-number" id="hours">00</span><div class="countdown-label">Hours</div></div>
+      <div class="countdown-item"><span class="countdown-number" id="minutes">00</span><div class="countdown-label">Minutes</div></div>
+      <div class="countdown-item"><span class="countdown-number" id="seconds">00</span><div class="countdown-label">Seconds</div></div>
+    </div>
+  </div>
+
+  <!-- Page 3 -->
+  <div class="page" id="page3">
+    <div class="card">
+      <div class="birthday-message">
+        🎉 Happy Birthday Pottoda 🎂💖
+      </div>
+      <div class="teddy-bears">
+        <img src="teddy1.jpeg" alt="Teddy 1" class="teddy" />
+        <img src="teaddy2.jpeg" alt="Teddy 2" class="teddy" />
+      </div>
+      <div class="letter">
+        Dear Pottoda,<br><br>
+        
+
+        Orey, you are not just my sister… you’re my built-in bestie, my secret-keeper, my partner in all crimes         (and snacks 🤭).
+        Thanks for tolerating my madness and still loving me like I’m normal 😂.
+
+        You stood by me in my darkest days, and also stole my things without asking 🙄… but still, life without  you would be totally boring.
+
+        No matter what, I’ll always be there for you—your personal bodyguard, comedy piece, and biggest         supporter all in one 🤌.
+        I just want to see you smile always, because your happiness means the world to me.
+
+        Love you infinity ra ❤️… now let’s eat cake before I eat you 😜🍰
+        Happy Birthday ra Pottoda 🎂🤪❤️<br>
+        <strong>Your Akki ❤️</strong>
+      </div>
+    </div>
+    <!-- Video Button -->
+<button class="btn" onclick="openVideo()">🎥 Watch Your Surprise Video</button>
+
+
+<!-- Hidden Video -->
+<div id="videoContainer" style="display:none; margin-top:20px;">
+  <video width="100%" controls>
+    <source src="vv.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+  </div>
+
+  
+
+  <script>
+    // Function to switch pages
+    function nextPage(num) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById("page" + num).classList.add("active");
+    }
+
+    // Auto move from page1 to page2 after 5 seconds
+    setTimeout(() => {
+      document.getElementById("page1").classList.remove("active");
+      document.getElementById("countdownScreen").style.display = "block";
+    }, 5000);
+
+    // Countdown for August 19, 2025, 12:00 AM
+    const targetDate = new Date("August 1, 2025 00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdownScreen").innerHTML = "<h2>🎉 It's August 19, enjoy the surprise! 🎂</h2>";
+        setTimeout(() => {
+          document.getElementById("countdownScreen").style.display = "none";
+          nextPage(3);
+        }, 3000);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function openVideo() {
+         function showVideo() {
+  document.getElementById("videoContainer").style.display = "block";
+}
+  // Replace "birthday.mp4" with your actual video file or YouTube link
+  window.open("vv.mp4", "_blank");
+}
+//     function showVideo() {
+//   document.getElementById("videoContainer").style.display = "block";
+// }
+  </script>
+</body>
+</html>
